@@ -82,6 +82,41 @@ const middlewares = {
                 success: false,
             });
         }
+    },
+    verifyRefreshToken: (req, res, next) => {
+        try {
+            const authToken = req.headers['authorization'];
+            if (!authToken) throw new Error('Bạn không thể thực hiện hành động!');
+
+            const token = authToken.split(' ')[1];
+            const data = verifyToken(token, 'RT');
+            req.user = data;
+            next();
+        } catch (error) {
+            let type = '';
+            let getMessage = '';
+            switch (error.message) {
+                case 'invalid signature':
+                    getMessage = 'Không thể xác thực token';
+                    type = 'INVALID_TOKEN';
+                    break;
+                case 'jwt expired':
+                    getMessage = 'Token hết hạn';
+                    type = 'EXP_TOKEN';
+                    break;
+                default:
+                    getMessage = 'Không thể xác thực';
+                    type = 'UNAUTH';
+                    break;
+            }
+            res.status(401).send({
+                data: null,
+                error,
+                message: getMessage,
+                type,
+                success: false,
+            });
+        }
     }
 };
 

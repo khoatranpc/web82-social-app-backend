@@ -39,7 +39,7 @@
 						"auth": {
 							"type": "bearer",
 							"bearer": {
-								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTM0ZGM5ZTRkNTQ4NzFjYzZhZDNlNGMiLCJlbWFpbCI6InN0dWRlbnRAbWluZHguZWR1LnZuIiwidHlwZVRva2VuIjoiQVQiLCJpYXQiOjE2OTc5ODc4NjAsImV4cCI6MTY5Nzk4ODE2MH0.zokhfeC_7PZ5nrJpZ1aS3cC99kIC4cZJPpOUlPrYWK0"
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTM0ZGM5ZTRkNTQ4NzFjYzZhZDNlNGMiLCJlbWFpbCI6InN0dWRlbnRAbWluZHguZWR1LnZuIiwidHlwZVRva2VuIjoiQVQiLCJpYXQiOjE2OTgwNTEwNzcsImV4cCI6MTY5ODA1MTM3N30.zwqI1gx59uERJYQDrf-7sPlgmkoPCklzt3-C8SFceW4"
 							}
 						},
 						"method": "GET",
@@ -234,6 +234,26 @@
 							}
 						},
 						"url": "http://localhost:8080/api/v1/comments/6536254cb540eab0349323f2"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Refresh Token",
+			"item": [
+				{
+					"name": "Get new Access token",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTM0ZGM5ZTRkNTQ4NzFjYzZhZDNlNGMiLCJlbWFpbCI6InN0dWRlbnRAbWluZHguZWR1LnZuIiwidHlwZVRva2VuIjoiUlQiLCJpYXQiOjE2OTgwNTA5MDMsImV4cCI6MTY5ODY1NTcwM30.7JkV06w7zlVxcgSdwc0QSaT9-dNnvoBj4pdwI5zH6As"
+							}
+						},
+						"method": "GET",
+						"header": [],
+						"url": "http://localhost:8080/api/v1/authentication"
 					},
 					"response": []
 				}
